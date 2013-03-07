@@ -15,6 +15,10 @@ if defined?(Bundler)
   # Bundler.require(:default, :assets, Rails.env)
 end
 
+GITHUB_CONFIG = YAML.load(File.read(File.expand_path('../github.yml', __FILE__)))[::Rails.env]
+# example from Ryan Bates:
+# ENV.update YAML.load(File.read(File.expand_path('../application.yml', __FILE__)))
+
 module Codehabit
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.

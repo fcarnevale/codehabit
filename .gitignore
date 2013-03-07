@@ -17,4 +17,4 @@ doc/
 .idea
 
 # Ignore environment variable file
-/config/application.yml
+/config/github.yml
