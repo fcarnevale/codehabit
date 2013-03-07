@@ -17,4 +17,4 @@ doc/
 .idea
 
 # Ignore environment variable file
-/config/github.yml
+# take out for now: /config/github.yml
