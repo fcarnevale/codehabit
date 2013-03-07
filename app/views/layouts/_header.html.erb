@@ -7,7 +7,7 @@
           <!-- <li><%= link_to "home", root_path %></li>
           <li><%= link_to "about", about_path %></li> -->
           <% if current_user %>
-            <li><a href="<%= profile_url %>" target="_blank">signed in as <%= current_user.name %></a></li>
+            <li><a href="<%= profile_url %>" target="_blank">signed in as <%= current_user.username %></a></li>
             <li><%= link_to "sign out", signout_path %></li>
           <% else %>
             <li><%= link_to "sign in with GitHub", "/auth/github" %></li>

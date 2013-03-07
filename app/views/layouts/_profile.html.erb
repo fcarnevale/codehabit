@@ -1,0 +1,17 @@
+<div id="profile-pic-main">
+  <a href="https://en.gravatar.com/" target="_blank" title="change your avatar image at gravatar.com">
+  	<%= gravatar_for current_user %>
+  </a>
+</div>
+
+<div id="profile-info">
+  <% if current_user.name %>
+  <p><strong><%= current_user.name %></strong></p>
+  <% end %>
+  <p><%= current_user.username %></p>
+</div>
+
+<div id="streak-stats">
+  <p>your current code streak: 10 days!</p>
+  <p>your total checkins: 24</p> 
+</div>
