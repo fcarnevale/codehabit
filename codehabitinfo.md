@@ -11,3 +11,4 @@ x3. github authentication
 7c. basic way to navigate through the site users' profiles/posts
 8. authorization
 9. get a basic smart feed going (looks at a user's post tags, calculates what they're writing most about, and then populates their feed with those same topics - general posts get shown to everyone)
+10. styling similar to hulkort .com
