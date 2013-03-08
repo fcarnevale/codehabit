@@ -1,0 +1,12 @@
+<!--<p class="center checkin">check-in</p>-->
+
+<p class="center checkin"><a href="#">click here to add text to your check-in</a></p>
+
+<%= form_for(@checkin) do |f| %>
+  <div class="field">
+  	<%= f.text_field :title, placeholder: "your optional check-in title goes here." %>
+    <%= f.text_area :content, placeholder: "your optional text goes here. use <code></code> tags to display code snippets." %>
+  </div>
+  <%= f.submit "check-in", class: "btn btn-large btn-primary center-checkin" %>
+<% end %>
+

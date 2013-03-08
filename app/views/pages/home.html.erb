@@ -9,16 +9,18 @@
     </h2>
 
     <p>
-    codehab.it enables you to write short blog posts about   what you're learning, what problems you're having, and how you're (hopefully) figuring them out. 
+    codehab.it enables you to checkin, write short blog posts about   what you're learning, what problems you're having, and how you're (hopefully) figuring them out. 
     </p>
     <p>
     <strong>after all, the best way to learn something is to teach it, right?</strong> 
     </p>
-    <p>remember: we're all in this together. we're all newbs at some part of programming. and we're all trying to build a solid code habit.
+    <p>remember: we're all in this together. we're all noobs at some part of programming. and we're all trying to build a solid code habit.
     </p>
 
     <%= link_to "sign in with GitHub!", "/auth/github", class: "btn btn-large btn-primary" %>
   </div>
 <% else %>
   <%= render 'layouts/profile' %>
+  <hr>
+  <%= render 'shared/checkin_form' %>
 <% end %>
