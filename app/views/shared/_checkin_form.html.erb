@@ -1,9 +1,9 @@
 <!--<p class="center checkin">check-in</p>-->
 
-<p class="center checkin"><a href="#">click here to add text to your check-in</a></p>
+<%= render 'shared/checkin_link_toggle' %>
 
-<%= form_for(@checkin) do |f| %>
-  <div class="field">
+<%= form_for @checkin, remote: true do |f| %>
+  <div id="checkin-text-fields" class="field">
   	<%= f.text_field :title, placeholder: "your optional check-in title goes here." %>
     <%= f.text_area :content, placeholder: "your optional text goes here. use <code></code> tags to display code snippets." %>
   </div>

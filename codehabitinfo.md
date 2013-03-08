@@ -6,6 +6,10 @@ x add email to user model
 x4. basic profile section with gravatar and github profile info
 x5. placeholder for streak boxes
 xcheckin functionality
+xjquery to show/hide checkin forms
+ajax for checkin
+fallback behavior if js/jquery is off
+simple mobile formatting
 ajax auto save on checkin form
 checkin stats
 7. post functionality - figure out how to format code within posts - use checkboxes for tagging? "rails ruby python django java general other" etc

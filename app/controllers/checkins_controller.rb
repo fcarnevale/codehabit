@@ -5,12 +5,21 @@ class CheckinsController < ApplicationController
   def create
     @checkin = current_user.checkins.build(params[:checkin])
     if @checkin.save
-      flash[:success] = "checkin created!"
-      redirect_to root_url
-    else
-      # @feed_items = []
-      render 'pages/home'
+      respond_to do |format|
+        format.html { 
+          flash[:success] = "checkin created!"
+          redirect_to root_url 
+        }
+        format.js
+      end
     end
+    # if @checkin.save
+    #   flash[:success] = "checkin created!"
+    #   redirect_to root_url
+    # else
+    #   # @feed_items = []
+    #   render 'pages/home'
+    # end
   end
 
   def destroy
