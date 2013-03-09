@@ -13,19 +13,23 @@ xfallback behavior if js/jquery is off
 use chosen plugin for tags on the checkin form (rails, ruby, python, CSS, html, etc)
 x-create models and associations
 x-add chosen plugin
--seeds.rb file to populate initial tags, and rake db:seed
+x-seeds.rb file to populate initial tags, and rake db:seed
+
+basic checkin stats
+
+7a. post show view
+7b. posts view (have a partial that renders a list of links of a user's last 5 posts on home screen)
+7c. basic way to navigate through the site users' profiles/posts
 
 make copy more self-evident on show form link - add "(optional)"
-checkin stats
 minimal mobile version
 ajax auto save on checkin form
-7. post functionality - figure out how to format code within posts - use checkboxes for tagging? "rails ruby python django java general other" etc
-7a. post show view
-7b. posts view (have a partial that renders a list of links of a user's last 5 posts)
-7c. basic way to navigate through the site users' profiles/posts
+
+figure out how to format code within posts
+
 placeholder for rightside feed
 8. authorization
-checkin reminders via email
+checkin reminders via email or sms (choose whichever you'd personally prefer)
 form validations, model validations, and error checking (check out sample app for bootstrap error references)
 9. get a basic smart feed going (looks at a user's post tags, calculates what they're writing most about, and then populates their feed with those same topics - general posts get shown to everyone)
 10. styling similar to hulkort .com or old school terminal looking?
