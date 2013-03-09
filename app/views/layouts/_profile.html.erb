@@ -11,7 +11,7 @@
   <p><%= current_user.username %></p>
 </div>
 
-<div id="streak-stats">
+<div id="checkin-stats">
+  <p>your total check-ins: <span id="checkin-count"><%= current_user.checkins.count %></span></p> 
   <p>your current code streak: 10 days!</p>
-  <p>your total check-ins: 24</p> 
 </div>

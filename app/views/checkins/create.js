@@ -20,4 +20,6 @@ $("#checkin_content").val("");
 
 $(".alert").hide();
 
+$('#checkin-count').html(parseInt($('#checkin-count').html(), 10)+1);
+
 alert("check-in successful!");

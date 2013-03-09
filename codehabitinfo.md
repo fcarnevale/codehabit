@@ -15,7 +15,8 @@ x-create models and associations
 x-add chosen plugin
 x-seeds.rb file to populate initial tags, and rake db:seed
 
-basic checkin stats
+xbasic checkin stats
+basic streak functionality
 
 7a. post show view
 7b. posts view (have a partial that renders a list of links of a user's last 5 posts on home screen)
