@@ -5,3 +5,14 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+# Create initial tag values
+
+topic_tags = [
+  "Ruby", "Rails", "HTML", "CSS", "JavaScript", "CoffeeScript", "jQuery",
+  "PHP", "Python", "Django", "TDD", "Meteor", "General", "Other"
+]
+
+topic_tags.each do |topic|
+  Tag.find_or_create_by_name(topic)	
+end
