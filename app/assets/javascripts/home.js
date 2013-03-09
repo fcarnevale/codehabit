@@ -7,6 +7,7 @@ $(function(){
   $("#view-checkin-form").click(function(event){
     event.preventDefault();
     $(this).hide();
+    $(".alert").hide();
     $("#hide-checkin-form").show();
     $("#checkin-text-fields").show();
   });
