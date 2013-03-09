@@ -9,10 +9,15 @@ xcheckin functionality
 xjquery to show/hide checkin forms
 xajax for checkin
 xfallback behavior if js/jquery is off
-add checkboxes for tags on the checkin form (rails, ruby, python, CSS, html, etc)
+
+use chosen plugin for tags on the checkin form (rails, ruby, python, CSS, html, etc)
+x-create models and associations
+x-add chosen plugin
+-seeds.rb file to populate initial tags, and rake db:seed
+
 make copy more self-evident on show form link - add "(optional)"
-simple mobile formatting
 checkin stats
+minimal mobile version
 ajax auto save on checkin form
 7. post functionality - figure out how to format code within posts - use checkboxes for tagging? "rails ruby python django java general other" etc
 7a. post show view

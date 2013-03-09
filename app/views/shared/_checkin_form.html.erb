@@ -6,7 +6,7 @@
   <div id="checkin-text-fields" class="field">
   	<%= f.text_field :title, placeholder: "your optional check-in title goes here." %>
     <%= f.text_area :content, placeholder: "your optional text goes here. use <code></code> tags to display code snippets." %>
+    <%= f.collection_select :tag_ids, Tag.order(:name), :id, :name, {}, {multiple: true, "data-placeholder" => "tags"} %>
   </div>
   <%= f.submit "check-in", class: "btn btn-large btn-primary center-checkin" %>
 <% end %>
-

@@ -2,6 +2,7 @@ $(function(){
   
   $("#checkin-text-fields").hide();
   $("#hide-checkin-form").hide();
+  $("ul.chzn-choices li.search-field input").removeAttr("class");
 
   $("#view-checkin-form").click(function(event){
     event.preventDefault();

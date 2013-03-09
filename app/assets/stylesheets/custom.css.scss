@@ -176,7 +176,7 @@ footer {
 
 /* check-in */
 
-.field textarea, input[type=text] {
+.field textarea, input[type=text], select {
   width: 500px;
   display: block;
   margin: 0 auto;
@@ -195,6 +195,27 @@ footer {
 
 #hide-checkin-form {
   display: none;
+}
+
+#checkin_tag_ids {
+  width: 500px;
+}
+
+#checkin_tag_ids_chzn {
+  width: 500px !important;
+  margin-bottom: 20px;
+}
+
+.chzn-drop {
+  width: 500px !important;
+}
+
+input.default {
+  width: 500px !important;
+}
+
+.default {
+  border-radius: 20px !important;
 }
 
 /* miscellaneous */
