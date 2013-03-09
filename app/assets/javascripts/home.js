@@ -7,6 +7,7 @@ $(function(){
   $("#view-checkin-form").click(function(event){
     event.preventDefault();
     $(this).hide();
+    $("ul.chzn-choices li.search-field input").attr("style", "width: 50px;");
     $("#hide-checkin-form").show();
     $("#checkin-text-fields").show();
   });
