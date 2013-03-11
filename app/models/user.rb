@@ -9,9 +9,9 @@ class User < ActiveRecord::Base
       user.username = auth.info.nickname
       user.name = auth.info.name
       user.email = auth.info.email
-      if user.streaks.count == 0
-        user.streaks.build
-      end
+      # if user.streaks.count == 0
+      #   user.streaks.build
+      # end
       user.save!
     end
   end
