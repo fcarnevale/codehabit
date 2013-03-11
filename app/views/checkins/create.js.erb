@@ -27,7 +27,7 @@ alert("@add_to_streak value: <%= @add_to_streak.inspect %>")
   alert("inside @add_to_streak conditional")
   // $('#streak-count').html(parseInt($('#streak-count').html(), 10)+1);
   // var streak_count = parseInt($('#streak-count').html(), 10)+1);
-  <% new_streak_count = current_user.current_streak + 1 %>
+  <% new_streak_count = current_user.current_streak %>
   $('#streak-count').html("<%= pluralize(new_streak_count, 'day') %>!");
 <% end %>
 

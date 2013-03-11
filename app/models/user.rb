@@ -27,35 +27,36 @@ class User < ActiveRecord::Base
     if last_checkin
       right_now = Time.now.utc
       last_checkin_time = last_checkin.created_at
-      diff_in_hours = ((right_now - last_checkin_time) / 3600).to_i
+      last_checkin_date = last_checkin_time.to_date
+      back_to_back = (last_checkin_date == right_now.to_date.yesterday)
+
+      # diff_in_hours = ((right_now - last_checkin_time) / 3600).to_i
       # This would make more sense if I could put a ? mark
       # at the end of the variable, but that's invalid syntax
       on_same_day = (last_checkin_time.to_date === right_now.to_date)
 
-      if diff_in_hours <= 24 && !on_same_day
-        if self.streaks
-          self.streaks.last.num_days += 1
-          self.streaks.save
-          puts "in the first if of the process_streak"
-        else
-          self.streaks.create
-        end
+      if back_to_back
+        self.streaks.last.num_days += 1
+        self.save
+        puts "in the first if of the process_streak"
         return true
-      elsif diff_in_hours <= 24 && on_same_day
+      elsif on_same_day
         # do nothing - don't add to the streak
         puts "in the elsif of the process_streak"
         return false
       else
         # start a new streak
-        self.streaks.create
+        self.streaks.build
         self.streaks.last.num_days = 1
-        self.streaks.save
+        self.save
         puts "in the else of the process_streak"
         return true
       end
     else
-      # user has no checkins, thus no streaks, so create a streak
-      self.streaks.create
+      # user has no prior checkins, thus no streaks, so create a streak
+      self.streaks.build
+      self.streaks.last.num_days = 1
+      self.save
       return true
     end
   end
@@ -72,18 +73,20 @@ class User < ActiveRecord::Base
     last_checkin = self.checkins.where("checkins.id IS NOT NULL").last
     if last_checkin
       right_now = Time.now.utc
+      right_now_date = right_now.to_date
       puts "right_now: #{right_now}"
       last_checkin_time = last_checkin.created_at
+      last_checkin_date = last_checkin_time.to_date
+      back_to_back = (last_checkin_date == right_now.to_date.yesterday)
       puts "last_checkin: #{last_checkin.inspect}"
-      diff_in_hours = ((right_now - last_checkin_time) / 3600).to_i
-      puts "diff_in_hours: #{diff_in_hours.inspect}"
+      days_apart = ((right_now_date - last_checkin_date).to_i)
+      # diff_in_hours = ((right_now - last_checkin_time) / 3600).to_i
+      # puts "diff_in_hours: #{diff_in_hours.inspect}"
       on_same_day = (last_checkin_time.to_date === right_now.to_date)
       puts "I'm in the first continue_streak if block"
-      if diff_in_hours > 24
-        puts "diff_in_hours is > 24 and = #{diff_in_hours}"
+      if days_apart > 1
         return 0
-      elsif diff_in_hours <= 24 && self.streaks
-        puts "diff_in_hours is #{diff_in_hours}"
+      elsif days_apart < 1 && self.streaks.count > 0
         return self.streaks.last.num_days
       end
     end

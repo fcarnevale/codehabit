@@ -23,6 +23,8 @@ x-subtract the datetime objects, multiply by 24, and convert result to integer (
 
 xpluralize on streak / checkin stats (gonna be an issue with the ajax/jquery)
 
+figure out how to properly increment current streak without calling current_user.current_streak
+
 figure out how to reset a code streak to zero for folks who haven't checked in (something to do with running process_streak when home page loads)
 
 look into whether you should make default checkin title/content nil instead of blank string
