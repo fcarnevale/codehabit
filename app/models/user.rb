@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
       user.name = auth.info.name
       user.email = auth.info.email
       if user.streaks.count == 0
-        user.streaks.create
+        user.streaks.build
       end
       user.save!
     end
