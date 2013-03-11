@@ -35,6 +35,7 @@ class User < ActiveRecord::Base
       if diff_in_hours <= 24 && !on_same_day
         if self.streaks
           self.streaks.last.num_days += 1
+          self.streaks.save
           puts "in the first if of the process_streak"
         else
           self.streaks.create
@@ -48,6 +49,7 @@ class User < ActiveRecord::Base
         # start a new streak
         self.streaks.create
         self.streaks.last.num_days = 1
+        self.streaks.save
         puts "in the else of the process_streak"
         return true
       end
