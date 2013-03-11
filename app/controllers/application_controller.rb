@@ -13,4 +13,5 @@ private
   	"https://github.com/#{current_user.name}"
   end
   helper_method :profile_url
+
 end

@@ -12,6 +12,8 @@
 </div>
 
 <div id="checkin-stats">
-  <p>your total check-ins: <span id="checkin-count"><%= current_user.checkins.count %></span></p> 
-  <p>your current code streak: 10 days!</p>
+  <p>your total check-ins: <span id="checkin-count">
+    <%= current_user.checkins.count %></span></p>
+  <p>your current code streak: <span id="streak-count">
+    <%= pluralize(current_user.current_streak, 'day') %>!</span></p>
 </div>

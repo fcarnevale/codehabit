@@ -1,0 +1,34 @@
+
+// Try the following if you end up reinstating Ajax for checkins,
+// as it supposedly resets the multi_select. 
+// UPDATE - this one line is what I needed all along to get the chosen plugin
+// to play nice with Ajax
+$("#checkin_tag_ids").val('').trigger("liszt:updated");
+
+//$("li.search-choice").hide();
+//$("ul.chzn-choices li.search-choice").remove();
+//$("ul.chzn-results li.result-selected").attr("class", "active-result");
+$("ul.chzn-choices li.search-field input").removeAttr("class");
+//$("ul.chzn-choices li.search-field input").val("tags");
+
+$("#checkin-text-fields").hide();
+$("#hide-checkin-form").hide();
+$("#view-checkin-form").show();
+
+$("#checkin_title").val("");
+$("#checkin_content").val("");
+
+$(".alert").hide();
+
+// update the profile view
+$('#checkin-count').html(parseInt($('#checkin-count').html(), 10)+1);
+alert("@add_to_streak value: <%= @add_to_streak.inspect %>")
+<% if @add_to_streak %>
+  alert("inside @add_to_streak conditional")
+  // $('#streak-count').html(parseInt($('#streak-count').html(), 10)+1);
+  // var streak_count = parseInt($('#streak-count').html(), 10)+1);
+  <% new_streak_count = current_user.current_streak + 1 %>
+  $('#streak-count').html("<%= pluralize(new_streak_count, 'day') %>!");
+<% end %>
+
+alert("check-in successful!");

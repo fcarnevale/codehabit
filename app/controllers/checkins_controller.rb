@@ -3,6 +3,7 @@ class CheckinsController < ApplicationController
   before_filter :correct_user,   only: :destroy
 
   def create
+    @add_to_streak = current_user.process_streak
     @checkin = current_user.checkins.build(params[:checkin])
     if @checkin.save
       respond_to do |format|
@@ -32,6 +33,12 @@ class CheckinsController < ApplicationController
     def correct_user
       @checkin = current_user.checkins.find_by_id(params[:id])
       redirect_to root_url if @checkin.nil?
+    end
+
+    def streak
+      @add_to_streak = current_user.process_streak
+      @add_to_streak = false
+      puts "ADD TO STREAK VAR: #{@add_to_streak.inspect}"
     end
 
 end
