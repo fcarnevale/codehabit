@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
       user.username = auth.info.nickname
       user.name = auth.info.name
       user.email = auth.info.email
-      if !user.streaks
+      if user.streaks = nil
         user.streaks.build
       end
       user.save!
