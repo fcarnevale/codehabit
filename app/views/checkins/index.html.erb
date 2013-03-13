@@ -1,0 +1,8 @@
+<ul>
+<% @checkins.each do |checkin| %>
+  <% if checkin.title != "" and checkin.content != "" %>
+    <li><%= link_to checkin.title, '#' %></li>
+  <% else %>
+  <% end %>
+<% end %>
+</ul>

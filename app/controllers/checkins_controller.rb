@@ -2,6 +2,14 @@ class CheckinsController < ApplicationController
   before_filter :signed_in_user, only: [:create, :destroy]
   before_filter :correct_user,   only: :destroy
 
+  def index
+    @checkins = current_user.checkins if signed_in?
+  end
+
+  def show
+        
+  end
+
   def create
     @add_to_streak = current_user.process_streak
     @checkin = current_user.checkins.build(params[:checkin])
