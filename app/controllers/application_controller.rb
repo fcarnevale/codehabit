@@ -10,7 +10,7 @@ private
   helper_method :current_user
 
   def profile_url
-  	"https://github.com/#{current_user.name}"
+  	"https://github.com/#{current_user.username}"
   end
   helper_method :profile_url
 
